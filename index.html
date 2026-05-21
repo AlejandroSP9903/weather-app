@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App de Clima</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .lista-ciudades {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .lista-ciudades h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+  }
+  
+  .lista-ciudades ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .lista-ciudades li {
+    background: white;
+    padding: 8px 12px;
+    border-left: 3px solid #667eea;
+    color: #555;
+  }
+  
+  .buscador {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #667eea;
+  }
+  
+  button {
+    padding: 12px 30px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #764ba2;
+  }
+  
+  #clima {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #clima h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  #clima p {
+    font-size: 18px;
+    margin: 8px 0;
+  }
+  
+  .error {
+    color: #e74c3c;
+    background: #fadbd8 !important;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌤️ Mi App de Clima</h1>
+    
+    <div class="lista-ciudades">
+      <h3>Ciudades disponibles:</h3>
+      <ul>
+        <li>Bogotá</li>
+        <li>Medellín</li>
+        <li>Cali</li>
+        <li>Cartagena</li>
+        <li>Buenos Aires</li>
+      </ul>
+    </div>
+    
+    <div class="buscador">
+      <input 
+        type="text" 
+        id="ciudad" 
+        placeholder="Escribe el nombre de una ciudad"
+      >
+      <button id="buscar">Buscar</button>
+    </div>
+    
+    <div id="clima"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
